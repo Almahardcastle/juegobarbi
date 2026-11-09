@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Vestí a la muñequita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="escenario">
+
+    <!-- PANTALLA 1: INICIO -->
+    <section id="pantalla-inicio" class="pantalla activa">
+      <img class="fondo" src="pantalladeinicio.png" alt="">
+      <img id="botjugar" class="elemento" src="botjugar.png" alt="Jugar">
+    </section>
+
+    <!-- PANTALLA 2: VESTIR -->
+    <section id="pantalla-vestir" class="pantalla">
+      <img class="fondo" src="pantallavestir.png" alt="">
+      <img id="doll" class="elemento" src="doll1.png" alt="Muñequita">
+
+      <img id="botfruti"  class="elemento boton-outfit" src="botfruti.png"  data-doll="doll4.png" alt="Outfit 1">
+      <img id="botboca"   class="elemento boton-outfit" src="botboca.png"   data-doll="doll5.png" alt="Outfit 2">
+      <img id="botgira"   class="elemento boton-outfit" src="botgira.png"   data-doll="doll3.png" alt="Outfit 3">
+      <img id="botsnupi"  class="elemento boton-outfit" src="botsnupi.png"  data-doll="doll2.png" alt="Outfit 4">
+
+      <img id="flecha" class="elemento oculto" src="flecha.png" alt="Siguiente">
+    </section>
+
+    <!-- PANTALLA 3: FINAL -->
+    <section id="pantalla-final" class="pantalla">
+      <img class="fondo" src="pantallafinal.png" alt="">
+      <img id="doll-final" class="elemento" src="doll1.png" alt="Muñequita elegida">
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
