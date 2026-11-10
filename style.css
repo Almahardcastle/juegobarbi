@@ -86,6 +86,38 @@ img {
   display: none;
 }
 
+/* ---------- PANTALLA ELEGIR FONDO ---------- */
+/* Muñequita: misma ubicación que en la pantalla de vestir */
+#doll-fondo {
+  left: -70px;
+  top: 440px;
+  cursor: default;
+}
+
+/* Botones de fondo: mismo eje X y mismas alturas que los primeros 3 de vestir */
+.boton-fondo {
+  left: 755px;
+}
+
+#botunqui { top: 750px; }
+#botmuni  { top: 1050px; }
+#botchino { top: 1350px; }
+
+/* Flecha: misma ubicación que en la pantalla de vestir */
+#flecha-fondo {
+  left: 830px;
+  top: 550px;
+}
+
+/* Cartelito de instrucciones: esquina superior derecha, estático */
+#instruccion {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none; /* no bloquea los toques */
+  z-index: 10;
+}
+
 /* ---------- PANTALLA FINAL ---------- */
 /* Muñequita centrada en la pantalla */
 #doll-final {
@@ -93,4 +125,58 @@ img {
   top: 1220px;
   transform: translate(-50%, -50%);
   cursor: default;
+}
+
+/* Cartel de instrucción final: borde superior, centrado */
+#instruccion-final {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none; /* no bloquea los toques */
+  z-index: 10;
+}
+
+/* Botón jugar de nuevo: mismo lugar que el botón de la pantalla principal */
+#jugardenuevo {
+  left: 230px;
+  top: 1600px;
+}
+
+/* ---------- BRILLITOS ---------- */
+#brillos,
+#brillos-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1920px;
+  pointer-events: none; /* no bloquea los toques */
+  z-index: 5;
+}
+
+.brillo {
+  position: absolute;
+  /* forma de estrella de 4 puntas */
+  clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+  opacity: 0;
+  animation: destello var(--dur) ease-out var(--delay) both;
+}
+
+@keyframes destello {
+  0%   { transform: scale(0) rotate(0deg);    opacity: 0; }
+  40%  { transform: scale(1) rotate(90deg);   opacity: 1; }
+  100% { transform: scale(0) rotate(180deg);  opacity: 0; }
+}
+
+/* Pulso de luz sobre la muñeca */
+#doll.doll-brilla,
+#doll-fondo.doll-brilla {
+  animation: pulso-luz 0.6s ease-out;
+}
+
+@keyframes pulso-luz {
+  0%   { filter: brightness(1); }
+  30%  { filter: brightness(1.35) saturate(1.2); }
+  100% { filter: brightness(1); }
 }
